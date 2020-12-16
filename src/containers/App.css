@@ -1,0 +1,98 @@
+.name__text {
+  font-weight: bold;
+  margin: auto 10em auto;
+  font-size: 1.5em; }
+  @media (max-width: 767px) {
+    .name__text {
+      text-align: center;
+      margin: 0; } }
+
+.profession__container {
+  margin: 2em;
+  font-weight: bold;
+  font-size: 6em;
+  text-align: left;
+  line-height: 2em; }
+  @media (max-width: 767px) {
+    .profession__container {
+      font-size: 3em;
+      margin: 2em .5em;
+      text-align: center; } }
+
+.container__dynamicText {
+  margin: 1em 4em;
+  font-size: 3em;
+  display: inline-flex; }
+  @media (max-width: 767px) {
+    .container__dynamicText {
+      font-size: 1.5em;
+      margin: auto; } }
+
+.u-center-content {
+  text-align: center;
+  margin: auto; }
+
+.container__landing {
+  display: flex;
+  flex-direction: column;
+  padding: 2em auto; }
+
+.container__hamburger {
+  display: flex;
+  padding: 2em 3em;
+  position: absolute;
+  z-index: 1; }
+  @media (max-width: 767px) {
+    .container__hamburger {
+      flex-direction: column;
+      text-align: center;
+      padding: 0;
+      left: 50%;
+      transform: translate(-50%, 0%); } }
+  .container__hamburger_content {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    font-size: 1.1em;
+    text-align: center; }
+    @media (max-width: 767px) {
+      .container__hamburger_content {
+        flex-direction: column; } }
+    .container__hamburger_content_main {
+      width: 23%;
+      padding: 5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-template-areas: ".";
+      background: #010101;
+      color: #bec0c6;
+      transition: all 0.5s; }
+      @media (max-width: 767px) {
+        .container__hamburger_content_main {
+          text-align: center;
+          width: 100%; } }
+      .container__hamburger_content_main_heading {
+        font-size: 2em;
+        line-height: 1.5em; }
+      .container__hamburger_content_main_paragraph {
+        color: #010101; }
+        .container__hamburger_content_main_paragraph:hover {
+          color: #d2d3d7; }
+        @media (max-width: 767px) {
+          .container__hamburger_content_main_paragraph {
+            display: none; } }
+      .container__hamburger_content_main:hover {
+        transition: all 0.5s;
+        background: #d2d3d7;
+        color: #010101; }
+
+@media (max-width: 767px) {
+  .hamburger-react {
+    margin: auto;
+    text-align: center; } }
+
+body {
+  background: #010101;
+  color: #d2d3d7;
+  font-family: "Montserrat", sans-serif; }
