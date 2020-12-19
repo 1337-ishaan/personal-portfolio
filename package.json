@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
+    "emailjs": "^3.4.0",
+    "emailjs-com": "^2.6.4",
     "hamburger-react": "^2.4.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",

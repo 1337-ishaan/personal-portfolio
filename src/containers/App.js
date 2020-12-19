@@ -4,9 +4,10 @@ import Landing from "../components/Landing/index";
 import Welcome from "../components/Welcome/index";
 import Services from "../components/Services/index";
 import Inspiration from "../components/Inspiration/index";
-
+import Contact from "../components/Contact/index";
 import { BrowserRouter as Router } from "react-router-dom";
 import Hamburger from "../components/utilities/Hamburger";
+
 
 export const scrollColor = (rgbColor, scrollContainer) => {
   const [red, green, blue] = rgbColor;
@@ -35,6 +36,7 @@ const App = () => {
           <Services />
         </div>
         <Inspiration />
+        <Contact />
       </Router>
     </div>
   );
