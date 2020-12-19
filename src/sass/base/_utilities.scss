@@ -1,4 +1,22 @@
-.u-center-content{
-    text-align:center;
-    margin:auto;
+.u-center-content {
+  text-align: center;
+  margin: auto;
+}
+.u-heading-text {
+  font-weight: bold;
+  color: $color-heading-text;
+}
+
+.u-subject-text {
+  text-align: center;
+  font-size: 3em;
+  padding: 2em;
+  letter-spacing: 0.5em;
+  background-image: $background-rainbow-gradient;
+  color: $color-primary-dark;
+  font-weight: 500;
+  font-family: "Caveat", sans-serif;
+  @media (max-width: 767px) {
+    font-size: 1.3em;
+  }
 }

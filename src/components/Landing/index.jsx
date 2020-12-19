@@ -6,7 +6,6 @@ const index = () => {
   return (
     <>
       <div className="container__landing">
-        <Hamburger />
         <Profession />
         <DynamicText />
       </div>

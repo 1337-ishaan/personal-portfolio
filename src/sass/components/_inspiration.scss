@@ -1,0 +1,67 @@
+.container__inspiration {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  &_box {
+    margin-top: 2em;
+    display: flex;
+    align-content: space-evenly;
+    justify-content: space-between;
+
+    @media (max-width: 767px) {
+      flex-direction: column-reverse;
+    }
+    &_2 {
+      text-align: right;
+      padding: 2em;
+      margin: auto;
+      margin-left: -80em;
+      z-index: -1;
+      &_image {
+        height: 19em;
+        width: 30em;
+        @media (max-width: 767px) {
+          height: 15em;
+          width: 90%;
+        }
+      }
+      @media (max-width: 767px) {
+        margin: auto;
+        padding: 0.5em;
+        text-align: center;
+      }
+    }
+    &_1 {
+      display: flex;
+      flex-direction: column;
+      align-content: space-evenly;
+      margin: $margin-for-hamburger + 2em;
+      padding: 3em 5em;
+      width: 50em;
+      grid-template-areas: ".";
+      background: rgba($color-primary-dark, 0.8);
+      @media (max-width: 767px) {
+        padding: 0.5em;
+        text-align: center;
+        width: 100%;
+        margin: auto;
+      }
+      &_name {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        color: $color-heading-text;
+        font-weight: bold;
+        @media (max-width: 767px) {
+          font-size: 1.5em;
+        }
+      }
+      &_info {
+        font-size: 1.5em;
+        line-height: $default-line-height;
+      }
+      @media (max-width: 767px) {
+        font-size: 1em;
+      }
+    }
+  }
+}

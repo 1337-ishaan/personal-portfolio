@@ -1,0 +1,18 @@
+@mixin gridHorizontal {
+  display: grid;
+  grid-template-areas: ". . ";
+  grid-gap: 5em;
+  font-size: 2em;
+  line-height: $default-line-height;
+  padding: 3em 5em;
+  text-align: left;
+
+  @media (max-width: 767px) {
+    grid-template-areas: ".";
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    grid-gap: 1em;
+  }
+}

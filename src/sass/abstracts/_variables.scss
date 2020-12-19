@@ -4,9 +4,21 @@ $color-primary-light: #d2d3d7;
 
 $color-light-grey: #bec0c6;
 $color-dark-grey: #5b5b5c;
+$color-heading-text: #d9a86c;
 
+$background-rainbow-gradient: linear-gradient(
+  89.8deg,
+  rgba(204, 156, 223, 1) 0.3%,
+  rgba(155, 219, 245, 1) 20.4%,
+  rgba(245, 183, 208, 1) 40.2%,
+  rgba(250, 186, 98, 1) 62.9%,
+  rgba(234, 238, 240, 1) 81.9%,
+  rgba(250, 245, 171, 1) 99.2%
+);
 // transition timings
 $default-transition-time: 0.5s;
 
-// default paddings
-$margin-for-hamburger:2em;
+// default margins
+$margin-for-hamburger: 2em;
+
+$default-line-height: 1.5em;

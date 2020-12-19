@@ -2,33 +2,33 @@
   font-weight: bold;
   margin: auto 10em auto;
   font-size: 1.5em;
-  @media (max-width:767px){
-    text-align:center;
-    margin:0;
+  color: $color-heading-text;
+  @media (max-width: 767px) {
+    text-align: center;
+    margin: 0;
+    padding:.5em;
   }
 }
 
-.profession__container{
-  margin:$margin-for-hamburger;
-  font-weight:bold;
-  font-size:6em;
-  text-align:left;
-  line-height:2em;
-  @media (max-width:767px){
-    font-size:3em;
-    margin:2em .5em;
-    text-align:center;
+.profession__container {
+  margin: 1em $margin-for-hamburger;
+  font-weight: bold;
+  font-size: 6em;
+  text-align: left;
+  line-height: 2em;
+  @media (max-width: 767px) {
+    font-size: 3em;
+    margin: 1em 0.5em;
+    text-align: center;
   }
 }
 
-.container__dynamicText{
-  margin:1em $margin-for-hamburger+2em;
-  ;
-  font-size:3em;
-  display:inline-flex;
-  @media(max-width:767px){
-    font-size:1.5em;
-    margin:auto;
+.container__dynamicText {
+  margin: 0em $margin-for-hamburger + 2em;
+  font-size: 3em;
+  display: inline-flex;
+  @media (max-width: 767px) {
+    font-size: 1.5em;
+    margin: 0em auto;
   }
 }
-
