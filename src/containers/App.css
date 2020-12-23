@@ -414,8 +414,13 @@
       transition: all 1s;
       color: blue; }
 
-.vis {
+#container {
   position: relative; }
+
+canvas {
+  height: 47em !important;
+  width: 70em !important;
+  margin: auto; }
 
 body {
   transition: all .5s;

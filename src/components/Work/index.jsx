@@ -9,7 +9,7 @@ const index = () => {
       <div className="u-subject-text">Works</div>
       <ThreeScene />
       {/* <WorkImage /> */}
-      <Projects />
+      {/* <Projects /> */}
     </div>
   );
 };
