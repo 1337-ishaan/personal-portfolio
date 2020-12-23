@@ -1,16 +1,43 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Canvas } from "react-three-fiber";
-import Box from "./WorkImage/Box";
-import * as THREE from "three";
-import Stats from "three/examples/jsm/libs/stats.module.js";
+import React, { useEffect } from "react";
+import ReactThreeFbxViewer from "react-three-fbx-viewer";
 
-import { ColladaLoader } from "three/examples/jsm/loaders/ColladaLoader.js";
+import * as THREE from "three";
+
+import Stats from "three/examples/jsm/libs/stats.module.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
+import modelObj from "../../assets/scene.obj";
+import Ishaan from '../../assets/images/IshaanGREY.jpg';
+
 const ThreeScene = () => {
+  const onLoad = (e) => {
+    console.log(e);
+  };
+
+  const onError = (e) => {
+    console.log(e);
+  };
+
+  let cameraPosition = {
+    x: 150,
+    y: 300,
+    z: 350,
+  };
+
   useEffect(() => {
-    let container, stats, clock, controls;
-    let camera, scene, renderer, mixer;
+    console.log(modelObj);
+    let container;
+
+    let camera, scene, renderer;
+
+    let mouseX = 0,
+      mouseY = 0;
+
+    let windowHalfX = window.innerWidth / 2;
+    let windowHalfY = window.innerHeight / 2;
+
+    let object;
 
     init();
     animate();
@@ -19,70 +46,79 @@ const ThreeScene = () => {
       container = document.getElementById("container");
 
       camera = new THREE.PerspectiveCamera(
-        25,
+        45,
         window.innerWidth / window.innerHeight,
         1,
-        1000
+        2000
       );
-      camera.position.set(15, 10, -15);
+      camera.position.z = 250;
+
+      // scene
 
       scene = new THREE.Scene();
 
-      clock = new THREE.Clock();
-
-      // collada
-
-      const loader = new ColladaLoader();
-      loader.load("./stormtrooper.dae", function (collada) {
-        const animations = collada.animations;
-        const avatar = collada.scene;
-
-        avatar.traverse(function (node) {
-          if (node.isSkinnedMesh) {
-            node.frustumCulled = false;
-          }
-        });
-
-        mixer = new THREE.AnimationMixer(avatar);
-        mixer.clipAction(animations[0]).play();
-
-        scene.add(avatar);
-      });
-
-      //
-
-      const gridHelper = new THREE.GridHelper(10, 20, 0x888888, 0x444444);
-      scene.add(gridHelper);
-
-      //
-
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+      const ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
       scene.add(ambientLight);
 
       const pointLight = new THREE.PointLight(0xffffff, 0.8);
-      scene.add(camera);
       camera.add(pointLight);
+      scene.add(camera);
+
+      // manager
+
+      function loadModel() {
+        object.traverse(function (child) {
+          if (child.isMesh) child.material.map = texture;
+        });
+
+        object.position.y = -95;
+        scene.add(object);
+      }
+
+      const manager = new THREE.LoadingManager(loadModel);
+
+      manager.onProgress = function (item, loaded, total) {
+        console.log(item, loaded, total);
+      };
+
+      // texture
+
+      const textureLoader = new THREE.TextureLoader(manager);
+      const texture = textureLoader.load(Ishaan);
+      console.log(texture);
+      // model
+
+      function onProgress(xhr) {
+        if (xhr.lengthComputable) {
+          const percentComplete = (xhr.loaded / xhr.total) * 100;
+          console.log(
+            "model " + Math.round(percentComplete, 2) + "% downloaded"
+          );
+        }
+      }
+
+      function onError() {
+        console.log("Error")
+    }
+
+      const loader = new OBJLoader(manager);
+      loader.load(
+        modelObj,
+        function (obj) {
+          object = obj;
+        },
+        onProgress,
+        onError
+      );
 
       //
 
-      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer = new THREE.WebGLRenderer();
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
       container.appendChild(renderer.domElement);
 
-      //
-
-      controls = new OrbitControls(camera, renderer.domElement);
-      controls.screenSpacePanning = true;
-      controls.minDistance = 5;
-      controls.maxDistance = 40;
-      controls.target.set(0, 2, 0);
-      controls.update();
-
-      //
-
-      stats = new Stats();
-      container.appendChild(stats.dom);
+      document.addEventListener("ondragstart", onDocumentMouseMove, false);
 
       //
 
@@ -90,30 +126,37 @@ const ThreeScene = () => {
     }
 
     function onWindowResize() {
+      windowHalfX = window.innerWidth / 2;
+      windowHalfY = window.innerHeight / 2;
+
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
 
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
+    function onDocumentMouseMove(event) {
+      mouseX = (event.clientX - windowHalfX) / 2;
+      mouseY = (event.clientY - windowHalfY) / 2;
+    }
+
+    //
+
     function animate() {
       requestAnimationFrame(animate);
-
       render();
-      stats.update();
     }
 
     function render() {
-      const delta = clock.getDelta();
+      camera.position.x += (mouseX - camera.position.x) * 0.05;
+      camera.position.y += (-mouseY - camera.position.y) * 0.05;
 
-      if (mixer !== undefined) {
-        mixer.update(delta);
-      }
+      camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
     }
   });
-
   return <div id="container"></div>;
 };
+
 export default ThreeScene;
