@@ -3,6 +3,7 @@ import { Slant } from "hamburger-react";
 import HamburgerContents from "./HamburgerContents";
 import Name from "../Landing/Name/Name";
 import { scrollColor } from "../../containers/App.js";
+import ThemeChanger from "./ThemeChanger";
 export const isOpenContext = React.createContext(false);
 
 const Hamburger = () => {
@@ -29,6 +30,8 @@ const Hamburger = () => {
       <isOpenContext.Provider value={!isOpen}>
         <Name />
       </isOpenContext.Provider>
+   
+   {/* <ThemeChanger/> */}
     </div>
   );
 };

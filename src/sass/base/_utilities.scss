@@ -5,6 +5,7 @@
 .u-heading-text {
   font-weight: bold;
   color: $color-heading-text;
+  font-size: 1em;
 }
 
 .u-subject-text {
@@ -26,27 +27,31 @@
   width: 20em;
   border-radius: $border-for-contact;
   outline: 0;
-  border-width:0 0 2px;
-  border-color:yellow;
+  border-width: 0 0 2px;
   align-items: center;
   margin: 1.5em 0;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
   &::placeholder {
-    color: rgba($color-primary-dark, 0.7);
+    color: rgba($color-primary-light, 0.7);
   }
   &:empty {
-    color: rgba($color-primary-dark, 1);
-    background: rgba($color-heading-text, 0.8);
-    box-shadow: inset 31px 31px 37px #b88f5c, inset -31px -31px 37px #fac17c;
+    color: rgba($color-primary-light, 1);
+    font-family: "Montserrat", sans-serif;
+    background: rgba(100, 100, 100, 0.5);
+    
+    // box-shadow: inset 31px 31px 37px #b88f5c, inset -31px -31px 37px #fac17c;
   }
   font-size: 1.1rem;
   padding: 0.5em;
-  width: 100%;
+  width: 70%;
   text-decoration: none;
   border: none;
   border-bottom: 2px solid transparent;
   transition: all 0.5s;
-  &:focus{
-    outline:0;
+  &:focus {
+    outline: 0;
   }
   &:focus:invalid {
     border-bottom: 3px solid red;
@@ -55,19 +60,33 @@
   &:focus:valid {
     border-bottom: 3px solid green;
   }
-
 }
 .u-form-input:placeholder-shown + .u-label-text {
   transform: translateY(-3.5em) translateX(2px);
   z-index: -1;
   transition: all 0.5s;
+  opacity: 0;
 }
 
 .u-label-text {
   transition: all 0.5s;
-  transform: translateY(-0.5em);
-  @media(max-width:767px){
-    transform: translateY(0em);
-
+  font-size: 1em;
+  opacity: 1;
+  // transform: translateY(-0.5em);
+  @media (max-width: 767px) {
+    transform: translateY(-6em);
   }
+  &-message{@media (max-width: 767px) {
+    transform: translateY(-14.5em);
+  }}
+}
+
+.u-container-for-grid {
+  @include gridHorizontal;
+}
+
+.u-media-icon {
+  height: 4.5em;
+  width: 4.5em;
+  border-radius: 50%;
 }

@@ -36,13 +36,22 @@
   font-family: "Bungee Outline", sans-serif;
   transform: translateY(0.5em); }
 
+.or__text {
+  font-family: "Caveat", sans-serif;
+  font-size: 1.3em;
+  margin: auto;
+  color: #fff;
+  text-decoration: underline;
+  border-bottom: 1px solid #fff; }
+
 .u-center-content {
   text-align: center;
   margin: auto; }
 
 .u-heading-text {
   font-weight: bold;
-  color: #d9a86c; }
+  color: #d9a86c;
+  font-size: 1em; }
 
 .u-subject-text {
   text-align: center;
@@ -63,22 +72,24 @@
   border-radius: 5px;
   outline: 0;
   border-width: 0 0 2px;
-  border-color: yellow;
   align-items: center;
   margin: 1.5em 0;
   font-size: 1.1rem;
   padding: 0.5em;
-  width: 100%;
+  width: 70%;
   text-decoration: none;
   border: none;
   border-bottom: 2px solid transparent;
   transition: all 0.5s; }
+  @media (max-width: 767px) {
+    .u-form-input {
+      width: 100%; } }
   .u-form-input::placeholder {
-    color: rgba(1, 1, 1, 0.7); }
+    color: rgba(210, 211, 215, 0.7); }
   .u-form-input:empty {
-    color: #010101;
-    background: rgba(217, 168, 108, 0.8);
-    box-shadow: inset 31px 31px 37px #b88f5c, inset -31px -31px 37px #fac17c; }
+    color: #d2d3d7;
+    font-family: "Montserrat", sans-serif;
+    background: rgba(100, 100, 100, 0.5); }
   .u-form-input:focus {
     outline: 0; }
   .u-form-input:focus:invalid {
@@ -89,14 +100,41 @@
 .u-form-input:placeholder-shown + .u-label-text {
   transform: translateY(-3.5em) translateX(2px);
   z-index: -1;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  opacity: 0; }
 
 .u-label-text {
   transition: all 0.5s;
-  transform: translateY(-0.5em); }
+  font-size: 1em;
+  opacity: 1; }
   @media (max-width: 767px) {
     .u-label-text {
-      transform: translateY(0em); } }
+      transform: translateY(-6em); } }
+  @media (max-width: 767px) {
+    .u-label-text-message {
+      transform: translateY(-14.5em); } }
+
+.u-container-for-grid {
+  display: grid;
+  grid-template-areas: ". . ";
+  grid-gap: 5em;
+  font-size: 2em;
+  line-height: 1.5em;
+  padding: 3em 5em;
+  text-align: left; }
+  @media (max-width: 767px) {
+    .u-container-for-grid {
+      grid-template-areas: ".";
+      margin-top: 1em;
+      padding: 1em;
+      text-align: center;
+      font-size: 1.5em;
+      grid-gap: 1em; } }
+
+.u-media-icon {
+  height: 4.5em;
+  width: 4.5em;
+  border-radius: 50%; }
 
 .container__landing {
   display: flex;
@@ -199,6 +237,9 @@
       font-size: 1.5em;
       grid-gap: 1em; } }
 
+.container__work_image {
+  width: 50%; }
+
 .container__inspiration {
   display: flex;
   flex-direction: column;
@@ -260,26 +301,33 @@
           font-size: 1em; } }
 
 .container__contact_form {
-  width: 50em;
+  width: fit-content;
   margin: 5em auto;
-  display: flex;
+  display: grid;
+  padding: 2em 4em;
+  grid-template-areas: ".";
   justify-content: space-evenly;
   background: rgba(100, 100, 100, 0.3);
   backdrop-filter: blur(4px);
-  padding: 0em 2em; }
+  flex-direction: column; }
   @media (max-width: 767px) {
     .container__contact_form {
       flex-direction: column;
       width: 90%; } }
   .container__contact_form_button {
-    width: fit-content;
+    width: 50%;
     padding: 1em;
+    text-align: center;
     border-radius: 5px;
     color: #d9a86c;
-    background: linear-gradient(145deg, #202020, #1b1b1b);
+    background: linear-gradient(55deg, #202020, #1b1b1b);
     box-shadow: 5px 5px 10px #2c2c2c, -5px -5px 10px #2c2c2c;
     transition: all 0.5s;
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    margin: auto;
+    position: relative;
+    border: none;
+    cursor: pointer; }
     .container__contact_form_button:hover {
       background: linear-gradient(145deg, #1b1b1b, #202020);
       box-shadow: -5px -5px 10px #111111, 5px 5px 10px #111111;
@@ -292,22 +340,85 @@
       box-shadow: -2.5px -2.5px 10px #111111, 2.5px 2.5px 10px #2c2c2c; }
     @media (max-width: 767px) {
       .container__contact_form_button {
-        margin: auto;
-        margin-top: 2em; } }
+        margin: auto; } }
   .container__contact_form_message_input {
     height: 10em;
-    width: 20em; }
+    width: 20em;
+    background: rgba(100, 100, 100, 0.3); }
     @media (max-width: 767px) {
       .container__contact_form_message_input {
-        margin-top: -5em;
         width: 100%; } }
+  .container__contact_form_grid {
+    display: flex;
+    padding: 2em 0;
+    margin: auto; }
+    @media (max-width: 767px) {
+      .container__contact_form_grid {
+        display: grid;
+        grid-template-areas: "."; } }
   .container__contact_form_1 {
     display: flex;
     flex-direction: column;
     align-items: space-around;
-    padding: 5em 0; }
+    margin: auto; }
+  .container__contact_form_2 {
+    margin: auto;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-areas: ".";
+    margin-bottom: 1em; }
+
+.container__social {
+  display: flex;
+  justify-content: space-evenly; }
+
+.fa {
+  height: 2.5em;
+  width: 2.5em;
+  font-size: 1.5em;
+  color: rgba(190, 192, 198, 0.5);
+  border-radius: 50%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center; }
+  .fa-instagram {
+    transition: all 1s; }
+    .fa-instagram:hover {
+      transition: all 1s;
+      color: transparent;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+      background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+      background-clip: text;
+      -webkit-background-clip: text; }
+  .fa-phone {
+    transition: all 1s; }
+    .fa-phone:hover {
+      transition: all 1s;
+      color: blue; }
+  .fa-envelope {
+    transition: all 1s; }
+    .fa-envelope:hover {
+      color: white;
+      transition: all 1s; }
+  .fa-github {
+    transition: all 1s; }
+    .fa-github:hover {
+      color: #eee;
+      transition: all 1s; }
+  .fa-facebook {
+    transition: all 1s; }
+    .fa-facebook:hover {
+      transition: all 1s;
+      color: blue; }
+
+.vis {
+  position: relative; }
 
 body {
+  transition: all .5s;
   background: #010101;
   color: #d2d3d7;
   font-family: "Montserrat", sans-serif; }

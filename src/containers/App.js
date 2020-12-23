@@ -5,14 +5,15 @@ import Welcome from "../components/Welcome/index";
 import Services from "../components/Services/index";
 import Inspiration from "../components/Inspiration/index";
 import Contact from "../components/Contact/index";
-import { BrowserRouter as Router } from "react-router-dom";
+import Work from "../components/Work/index";
+import SnackbarProvider from "react-simple-snackbar";
 import Hamburger from "../components/utilities/Hamburger";
 
-
+// changing background color with scroll
 export const scrollColor = (rgbColor, scrollContainer) => {
   const [red, green, blue] = rgbColor;
   const scrollElement = document.querySelector(`${scrollContainer}`);
-  scrollElement.style.background = `rgb(${red}, ${green}, ${blue})`;
+ scrollElement.style.background = `rgb(${red}, ${green}, ${blue})`;
   window.addEventListener("scroll", () => {
     let y = 1 + (window.scrollY || window.pageYOffset) / 180;
     y = y < 1 ? 1 : y; // ensure y is always >= 1 (due to Safari's elastic scroll)
@@ -28,7 +29,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Router>
+      <SnackbarProvider>
         <Hamburger />
         <Landing />
         <div className="welcome__services">
@@ -37,7 +38,8 @@ const App = () => {
         </div>
         <Inspiration />
         <Contact />
-      </Router>
+        <Work />
+      </SnackbarProvider>
     </div>
   );
 };
