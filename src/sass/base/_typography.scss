@@ -15,17 +15,23 @@
   font-size: 10em;
   z-index: 1;
   position: relative;
-  color: rgba($color-light-grey, 0.4);
+  color: rgba($color-light-grey, 0.3);
+  @media (max-width: 767px) {
+    font-size: 1.5em;
+    margin: 0em auto;
+  }
 }
-.drag__text_sprite{
+.drag__text_sprite {
+  @media (max-width: 767px) {
+    display: none;
+  }
   font-family: "Caveat", sans-serif;
   font-size: 5em;
   z-index: 1;
-  text-align:right;
-  padding:.5em;
+  text-align: right;
+  padding: 0.5em;
   // default
   color: rgba($color-light-grey, 0.4);
-
 }
 
 .profession__container {

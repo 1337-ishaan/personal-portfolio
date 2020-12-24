@@ -5,7 +5,7 @@ const Projects = () => {
     {
       name: "World Music Hub",
       details:
-        "Compilation of all the songs made by Atif Afzal all over the globe",
+        "Library comprising of all the songs made by Atif Afzal all over the globe",
       link: "https://wmh.ai/",
       background: "#2c2c2e",
       color: "#d9a86c",

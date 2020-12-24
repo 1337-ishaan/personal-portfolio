@@ -1,12 +1,22 @@
 .container__work {
   &_projects {
     display: flex;
-    // flex-direction:column;
+    // flex-wrap: wrap;
     margin: auto;
     justify-content: space-evenly;
+    @media (max-width: 767px) {
+      overflow-x: scroll;
+      justify-content: start;
+    }
+
+    width: 100%;
     &_card {
+      @media (max-width: 767px) {
+        height:22em;
+        width:50vw;
+      }
       height: 15em;
-      width: 15%;
+      width: 15em;
       border: 1px solid rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(3px);
       padding: 1em;
@@ -14,15 +24,19 @@
       border-radius: 2em;
       transition: all 0.5s;
       cursor: pointer;
+      // &:not(:last-child){
+      margin-left: 2em;
+      // }
       &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
         transition: all 0.5s;
       }
       &_link {
-        font-size: 1.2em;
+        font-size: 1.2em;        
       }
       &_details {
         font-size: 1.1em;
+      
       }
     }
   }
@@ -34,3 +48,8 @@
   }
 }
 
+#container {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
