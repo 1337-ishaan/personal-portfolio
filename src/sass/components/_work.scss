@@ -1,4 +1,36 @@
-.container__work
-{&_image{
-    width:50%;
-}}
+.container__work {
+  &_projects {
+    display: flex;
+    // flex-direction:column;
+    margin: auto;
+    justify-content: space-evenly;
+    &_card {
+      height: 15em;
+      width: 15%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(3px);
+      padding: 1em;
+      margin-top: 10em;
+      border-radius: 2em;
+      transition: all 0.5s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+        transition: all 0.5s;
+      }
+      &_link {
+        font-size: 1.2em;
+      }
+      &_details {
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  &_animations {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+  }
+}
+

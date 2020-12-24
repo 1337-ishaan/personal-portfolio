@@ -8,7 +8,18 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 import modelObj from "../../assets/scene.obj";
-import Ishaan from '../../assets/images/IshaanGREY.jpg';
+import Ishaan from "../../assets/images/IshaanR.jpg";
+
+import { AsciiEffect } from "three/examples/jsm/effects/AsciiEffect.js";
+import { TrackballControls } from "three/examples/jsm/controls/TrackballControls.js";
+import one from "../../assets/images/Ishaan1.png";
+
+import { TWEEN } from "three/examples/jsm/libs/tween.module.min.js";
+// import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls.js';
+import {
+  CSS3DRenderer,
+  CSS3DSprite,
+} from "three/examples/jsm/renderers/CSS3DRenderer.js";
 
 const ThreeScene = () => {
   const onLoad = (e) => {
@@ -27,98 +38,116 @@ const ThreeScene = () => {
 
   useEffect(() => {
     console.log(modelObj);
-    let container;
 
     let camera, scene, renderer;
+    let controls;
 
-    let mouseX = 0,
-      mouseY = 0;
-
-    let windowHalfX = window.innerWidth / 2;
-    let windowHalfY = window.innerHeight / 2;
-
-    let object;
+    const particlesTotal = 512;
+    const positions = [];
+    const objects = [];
+    let current = 0;
 
     init();
     animate();
 
     function init() {
-      container = document.getElementById("container");
-
       camera = new THREE.PerspectiveCamera(
-        45,
+        75,
         window.innerWidth / window.innerHeight,
         1,
-        2000
+        5000
       );
-      camera.position.z = 250;
-
-      // scene
+      camera.position.set(600, 400, 1500);
+      camera.lookAt(0, 0, 0);
 
       scene = new THREE.Scene();
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
-      scene.add(ambientLight);
+      const image = document.createElement("img");
+      image.addEventListener(
+        "load",
+        function () {
+          for (let i = 0; i < particlesTotal; i++) {
+            const object = new CSS3DSprite(image.cloneNode());
+            /* eslint-disable */
+            (object.position.x = Math.random() * 4000 - 2000),
+              (object.position.y = Math.random() * 4000 - 2000),
+              (object.position.z = Math.random() * 4000 - 2000);
+            scene.add(object);
 
-      const pointLight = new THREE.PointLight(0xffffff, 0.8);
-      camera.add(pointLight);
-      scene.add(camera);
+            objects.push(object);
+          }
 
-      // manager
-
-      function loadModel() {
-        object.traverse(function (child) {
-          if (child.isMesh) child.material.map = texture;
-        });
-
-        object.position.y = -95;
-        scene.add(object);
-      }
-
-      const manager = new THREE.LoadingManager(loadModel);
-
-      manager.onProgress = function (item, loaded, total) {
-        console.log(item, loaded, total);
-      };
-
-      // texture
-
-      const textureLoader = new THREE.TextureLoader(manager);
-      const texture = textureLoader.load(Ishaan);
-      console.log(texture);
-      // model
-
-      function onProgress(xhr) {
-        if (xhr.lengthComputable) {
-          const percentComplete = (xhr.loaded / xhr.total) * 100;
-          console.log(
-            "model " + Math.round(percentComplete, 2) + "% downloaded"
-          );
-        }
-      }
-
-      function onError() {
-        console.log("Error")
-    }
-
-      const loader = new OBJLoader(manager);
-      loader.load(
-        modelObj,
-        function (obj) {
-          object = obj;
+          transition();
         },
-        onProgress,
-        onError
+        false
       );
+      image.src =
+        "https://github.com/mrdoob/three.js/blob/master/examples/textures/sprite.png?raw=true";
+
+      // Plane
+
+      const amountX = 16;
+      const amountZ = 32;
+      const separationPlane = 150;
+      const offsetX = ((amountX - 1) * separationPlane) / 2;
+      const offsetZ = ((amountZ - 1) * separationPlane) / 2;
+
+      for (let i = 0; i < particlesTotal; i++) {
+        const x = (i % amountX) * separationPlane;
+        const z = Math.floor(i / amountX) * separationPlane;
+        const y = (Math.sin(x * 0.5) + Math.sin(z * 0.5)) * 200;
+
+        positions.push(x - offsetX, y, z - offsetZ);
+      }
+
+      // Cube
+
+      const amount = 8;
+      const separationCube = 150;
+      const offset = ((amount - 1) * separationCube) / 2;
+
+      for (let i = 0; i < particlesTotal; i++) {
+        const x = (i % amount) * separationCube;
+        const y = Math.floor((i / amount) % amount) * separationCube;
+        const z = Math.floor(i / (amount * amount)) * separationCube;
+
+        positions.push(x - offset, y - offset, z - offset);
+      }
+
+      // Random
+
+      for (let i = 0; i < particlesTotal; i++) {
+        positions.push(
+          Math.random() * 4000 - 2000,
+          Math.random() * 4000 - 2000,
+          Math.random() * 4000 - 2000
+        );
+      }
+
+      // Sphere
+
+      const radius = 750;
+
+      for (let i = 0; i < particlesTotal; i++) {
+        const phi = Math.acos(-1 + (2 * i) / particlesTotal);
+        const theta = Math.sqrt(particlesTotal * Math.PI) * phi;
+
+        positions.push(
+          radius * Math.cos(theta) * Math.sin(phi),
+          radius * Math.sin(theta) * Math.sin(phi),
+          radius * Math.cos(phi)
+        );
+      }
 
       //
 
-      renderer = new THREE.WebGLRenderer();
-      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer = new CSS3DRenderer();
       renderer.setSize(window.innerWidth, window.innerHeight);
-      container.appendChild(renderer.domElement);
+      document.getElementById("container").appendChild(renderer.domElement);
 
-      document.addEventListener("ondragstart", onDocumentMouseMove, false);
+      //
+
+      controls = new TrackballControls(camera, renderer.domElement);
 
       //
 
@@ -126,37 +155,64 @@ const ThreeScene = () => {
     }
 
     function onWindowResize() {
-      windowHalfX = window.innerWidth / 2;
-      windowHalfY = window.innerHeight / 2;
-
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
 
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
-    function onDocumentMouseMove(event) {
-      mouseX = (event.clientX - windowHalfX) / 2;
-      mouseY = (event.clientY - windowHalfY) / 2;
-    }
+    function transition() {
+      const offset = current * particlesTotal * 3;
+      const duration = 2000;
 
-    //
+      for (let i = 0, j = offset; i < particlesTotal; i++, j += 3) {
+        const object = objects[i];
+
+        new TWEEN.Tween(object.position)
+          .to(
+            {
+              x: positions[j],
+              y: positions[j + 1],
+              z: positions[j + 2],
+            },
+            Math.random() * duration + duration
+          )
+          .easing(TWEEN.Easing.Exponential.InOut)
+          .start();
+      }
+
+      new TWEEN.Tween(this)
+        .to({}, duration * 3)
+        .onComplete(transition)
+        .start();
+
+      current = (current + 1) % 4;
+    }
 
     function animate() {
       requestAnimationFrame(animate);
-      render();
-    }
 
-    function render() {
-      camera.position.x += (mouseX - camera.position.x) * 0.05;
-      camera.position.y += (-mouseY - camera.position.y) * 0.05;
+      TWEEN.update();
+      controls.update();
 
-      camera.lookAt(scene.position);
+      const time = performance.now();
+
+      for (let i = 0, l = objects.length; i < l; i++) {
+        const object = objects[i];
+        const scale =
+          Math.sin((Math.floor(object.position.x) + time) * 0.002) * 0.3 + 1;
+        object.scale.set(scale, scale, scale);
+      }
 
       renderer.render(scene, camera);
     }
-  });
-  return <div id="container"></div>;
+  }, []);
+  return (
+    <>
+    <div id="container"></div>
+    <div className="drag__text_sprite">v Drag to rotate and Scroll to resize</div>
+  </>
+  );
 };
 
 export default ThreeScene;

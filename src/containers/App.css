@@ -9,6 +9,21 @@
       margin: 0;
       padding: 0.5em; } }
 
+.drag__text {
+  font-family: "Caveat", sans-serif;
+  font-size: 10em;
+  z-index: 1;
+  position: relative;
+  color: rgba(190, 192, 198, 0.4); }
+
+.drag__text_sprite {
+  font-family: "Caveat", sans-serif;
+  font-size: 5em;
+  z-index: 1;
+  text-align: right;
+  padding: .5em;
+  color: rgba(190, 192, 198, 0.4); }
+
 .profession__container {
   margin: 1em 2em;
   font-weight: bold;
@@ -237,8 +252,32 @@
       font-size: 1.5em;
       grid-gap: 1em; } }
 
-.container__work_image {
-  width: 50%; }
+.container__work_projects {
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly; }
+  .container__work_projects_card {
+    height: 15em;
+    width: 15%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    padding: 1em;
+    margin-top: 10em;
+    border-radius: 2em;
+    transition: all 0.5s;
+    cursor: pointer; }
+    .container__work_projects_card:hover {
+      transform: scale(1.2);
+      transition: all 0.5s; }
+    .container__work_projects_card_link {
+      font-size: 1.2em; }
+    .container__work_projects_card_details {
+      font-size: 1.1em; }
+
+.container__work_animations {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly; }
 
 .container__inspiration {
   display: flex;
@@ -414,13 +453,16 @@
       transition: all 1s;
       color: blue; }
 
-#container {
-  position: relative; }
+.dg {
+  display: none !important; }
 
 canvas {
-  height: 47em !important;
-  width: 70em !important;
-  margin: auto; }
+  z-index: -1;
+  border: 1px solid #fff;
+  margin: auto;
+  margin-top: 5em;
+  width: 50vw !important;
+  height: 50vh !important; }
 
 body {
   transition: all .5s;

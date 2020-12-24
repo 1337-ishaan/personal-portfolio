@@ -161,19 +161,17 @@
   }
 }
 
-#container {
-  position: relative;
-  // height:100vh;
-  
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
+.dg {
+  display: none !important;
 }
-
 
 canvas{
-  height:47em!important;
-  width:70em!important;
+  z-index:-1;
+  border:1px solid #fff;
   margin:auto;
+  margin-top:5em;
+  width:50vw!important;
+  height:50vh!important;
 }
+
+
