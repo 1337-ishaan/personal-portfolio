@@ -18,7 +18,7 @@
   color: rgba($color-light-grey, 0.3);
   @media (max-width: 767px) {
     font-size: 1.5em;
-    margin: 0em auto;
+    margin: 02em auto 0;
   }
 }
 .drag__text_sprite {
@@ -35,9 +35,9 @@
 }
 
 .profession__container {
-  margin: 1em $margin-for-hamburger;
+  margin: 0em $margin-for-hamburger 1em;
   font-weight: bold;
-  font-size: 6em;
+  font-size: clamp(16px, 5vw, 6em);
   text-align: left;
   line-height: 2em;
   @media (max-width: 767px) {

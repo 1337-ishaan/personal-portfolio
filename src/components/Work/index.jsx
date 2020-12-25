@@ -11,8 +11,8 @@ const index = () => {
       <div className="u-subject-text">Works</div>
                 <div className="container__work_animations">
                     
-                <Parallax />
                <ThreeScene />
+                <Parallax />
                 <Projects />
                 </div>
     </div>

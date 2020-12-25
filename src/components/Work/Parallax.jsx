@@ -148,9 +148,9 @@ const Parallax = () => {
   }, []);
 
   return (<>
-  <div className="drag__text">Dragabble & Scrollable ^
-</div>
   <div id="parallax"></div>
+  <div className="drag__text">Dragabble & Scrollable v
+</div>
   </>);
 };
 

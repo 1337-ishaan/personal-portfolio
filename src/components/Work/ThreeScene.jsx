@@ -209,8 +209,8 @@ const ThreeScene = () => {
   }, []);
   return (
     <>
+    <div className="drag__text_sprite">^ Drag to rotate and Scroll to resize</div>
     <div id="container"></div>
-    <div className="drag__text_sprite">v Drag to rotate and Scroll to resize</div>
   </>
   );
 };

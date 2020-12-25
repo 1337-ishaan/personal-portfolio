@@ -18,7 +18,7 @@
   @media (max-width: 767px) {
     .drag__text {
       font-size: 1.5em;
-      margin: 0em auto; } }
+      margin: 02em auto 0; } }
 
 .drag__text_sprite {
   font-family: "Caveat", sans-serif;
@@ -32,9 +32,9 @@
       display: none; } }
 
 .profession__container {
-  margin: 1em 2em;
+  margin: 0em 2em 1em;
   font-weight: bold;
-  font-size: 6em;
+  font-size: clamp(16px, 5vw, 6em);
   text-align: left;
   line-height: 2em; }
   @media (max-width: 767px) {
@@ -140,15 +140,16 @@
   display: grid;
   grid-template-areas: ". . ";
   grid-gap: 5em;
-  font-size: 2em;
+  font-size: clamp(1em, 10vw, 2em);
   line-height: 1.5em;
-  padding: 3em 5em;
-  text-align: left; }
+  padding: 1em;
+  text-align: left;
+  padding: 2em 4em; }
   @media (max-width: 767px) {
     .u-container-for-grid {
-      grid-template-areas: ".";
+      grid-template-areas: "." ".";
       margin-top: 1em;
-      padding: 1em;
+      padding: .5em;
       text-align: center;
       font-size: 1.5em;
       grid-gap: 1em; } }
@@ -161,7 +162,8 @@
 .container__landing {
   display: flex;
   flex-direction: column;
-  height: 100vh; }
+  height: 100vh;
+  justify-content: center; }
 
 .container__hamburger {
   display: flex;
@@ -227,16 +229,17 @@
   display: grid;
   grid-template-areas: ". . ";
   grid-gap: 5em;
-  font-size: 2em;
+  font-size: clamp(1em, 10vw, 2em);
   line-height: 1.5em;
-  padding: 3em 5em;
+  padding: 1em;
   text-align: left;
+  padding: 2em 4em;
   margin-top: 2em; }
   @media (max-width: 767px) {
     .container__services {
-      grid-template-areas: ".";
+      grid-template-areas: "." ".";
       margin-top: 1em;
-      padding: 1em;
+      padding: .5em;
       text-align: center;
       font-size: 1.5em;
       grid-gap: 1em; } }
@@ -245,16 +248,17 @@
   display: grid;
   grid-template-areas: ". . ";
   grid-gap: 5em;
-  font-size: 2em;
+  font-size: clamp(1em, 10vw, 2em);
   line-height: 1.5em;
-  padding: 3em 5em;
+  padding: 1em;
   text-align: left;
+  padding: 2em 4em;
   margin-top: 7.5em; }
   @media (max-width: 767px) {
     .container__welcome {
-      grid-template-areas: ".";
+      grid-template-areas: "." ".";
       margin-top: 1em;
-      padding: 1em;
+      padding: .5em;
       text-align: center;
       font-size: 1.5em;
       grid-gap: 1em; } }
