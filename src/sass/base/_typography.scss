@@ -15,7 +15,7 @@
   font-size: 10em;
   z-index: 1;
   position: relative;
-  color: rgba($color-light-grey, 0.3);
+  color: rgba(set-color($color-primary-dark), 0.5);
   @media (max-width: 767px) {
     font-size: 1.5em;
     margin: 02em auto 0;
@@ -30,8 +30,9 @@
   z-index: 1;
   text-align: right;
   padding: 0.5em;
-  // default
-  color: rgba($color-light-grey, 0.4);
+  // default  
+  color: rgba(set-color($color-primary-dark), 0.5);
+
 }
 
 .profession__container {

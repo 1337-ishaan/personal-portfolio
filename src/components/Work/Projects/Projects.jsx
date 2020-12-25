@@ -7,7 +7,7 @@ const Projects = () => {
       details:
         "Library comprising of all the songs made by Atif Afzal all over the globe",
       link: "https://wmh.ai/",
-      background: "#2c2c2e",
+      background: "44, 44, 46",
       color: "#d9a86c",
       headColor: "#eee",
     },
@@ -16,16 +16,16 @@ const Projects = () => {
       details:
         "It is a basic idea of representing your long excel data sheets in graphical format, hence saving time for you.",
       link: "https://1337-ishaan.github.io/react-data-visualization/",
-      background: "#eeeeee",
-      color: "#232b2b",
-      headColor: "blue",
+      background: "169, 169, 169",
+      color: "#eee",
+      headColor: "#000",
     },
     {
       name: "Calculator",
       details: "Does not need to be explained :'/ ",
       link: "https://1337-ishaan.github.io/calculator-react/",
       color: "#eee",
-      background: "#232b2b",
+      background: "35, 43, 43",
       headColor: "orange",
     },
     {
@@ -33,7 +33,7 @@ const Projects = () => {
       details:
         "Utility landing page for developers wishing to make a travel website.",
       link: "https://1337-ishaan.github.io/travel-landing-page/",
-      background: "green",
+      background: "0, 128, 0",
       color: "#eee",
       headColor: "#fff",
     },
@@ -42,7 +42,7 @@ const Projects = () => {
       details:
         "Fetches Robots Images and Name data using API, and searches over it, my first project -_-",
       link: "https://1337-ishaan.github.io/RoboFriends/",
-      background: "#232b2b",
+      background: "35, 43, 43",
       color: "#fff",
       headColor: "yellow",
     },
@@ -53,7 +53,7 @@ const Projects = () => {
         <a
           className="container__work_projects_card"
           style={{
-            background: `${project.background}`,
+            background: `rgba(${project.background},.6)`,
             color: `${project.color}`,
           }}
           target="_blank"
@@ -61,7 +61,7 @@ const Projects = () => {
           key={i}
         >
           <div
-            className="container__work_projects_card_link"
+            className="container__work_projects_card_head"
             style={{ color: `${project.headColor}` }}
           >
             {project.name}

@@ -13,7 +13,7 @@ import Hamburger from "../components/utilities/Hamburger";
 export const scrollColor = (rgbColor, scrollContainer) => {
   const [red, green, blue] = rgbColor;
   const scrollElement = document.querySelector(`${scrollContainer}`);
- scrollElement.style.background = `rgb(${red}, ${green}, ${blue})`;
+  scrollElement.style.background = `rgb(${red}, ${green}, ${blue})`;
   window.addEventListener("scroll", () => {
     let y = 1 + (window.scrollY || window.pageYOffset) / 180;
     y = y < 1 ? 1 : y; // ensure y is always >= 1 (due to Safari's elastic scroll)
@@ -24,7 +24,14 @@ export const scrollColor = (rgbColor, scrollContainer) => {
 
 const App = () => {
   useEffect(() => {
-    scrollColor([130, 130, 130], ".welcome__services");
+    let bodyColor = document.querySelector("body");
+
+    scrollColor(
+      bodyColor.style.background === "#010101"
+        ? [130, 130, 130]
+        : [255, 255, 255],
+      ".welcome__services"
+    );
   }, []);
 
   return (

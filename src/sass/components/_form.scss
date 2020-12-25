@@ -7,7 +7,7 @@
     padding: 2em 4em;
     grid-template-areas: ".";
     justify-content: space-evenly;
-    background: rgba(100, 100, 100, 0.3);
+    background: rgba(set-color($color-primary-dark), 0.15);
     backdrop-filter: blur(4px);
     flex-direction: column;
     @media (max-width: 767px) {
@@ -90,7 +90,7 @@
   height: 2.5em;
   width: 2.5em;
   font-size: 1.5em;
-  color: rgba($color-light-grey, 0.5);
+  color: rgba(set-color($color-primary-dark),.6);
   border-radius: 50%;
   margin: auto;
   text-align: center;
@@ -147,6 +147,8 @@
 
     &:hover {
       color: #eee;
+  color: rgba(set-color($color-primary-dark),1);
+      
       transition: all 1s;
     }
   }
@@ -165,13 +167,11 @@
   display: none !important;
 }
 
-canvas{
-  z-index:-1;
-  border:1px solid #fff;
-  margin:auto;
-  margin-top:5em;
-  width:50vw!important;
-  height:50vh!important;
+canvas {
+  z-index: -1;
+  border: 1px solid rgba(set-color($color-primary-dark), 0.5);
+  margin: auto;
+  margin-top: 5em;
+  width: 50vw !important;
+  height: 50vh !important;
 }
-
-

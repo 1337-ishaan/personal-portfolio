@@ -1,6 +1,5 @@
 .container__services{
     @include gridHorizontal;
     margin-top:2em;
-
- 
+    color:set-color($color-primary-dark) 
 }

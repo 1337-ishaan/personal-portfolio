@@ -34,13 +34,14 @@
     width: 100%;
   }
   &::placeholder {
-    color: rgba($color-primary-light, 0.7);
+    color: rgba(set-color($color-primary-dark), 0.7);
   }
   &:empty {
-    color: rgba($color-primary-light, 1);
+    color: rgba(set-color($color-primary-dark), 1);
+
     font-family: "Montserrat", sans-serif;
     background: rgba(100, 100, 100, 0.5);
-    
+
     // box-shadow: inset 31px 31px 37px #b88f5c, inset -31px -31px 37px #fac17c;
   }
   font-size: 1.1rem;
@@ -76,9 +77,11 @@
   @media (max-width: 767px) {
     transform: translateY(-6em);
   }
-  &-message{@media (max-width: 767px) {
-    transform: translateY(-14.5em);
-  }}
+  &-message {
+    @media (max-width: 767px) {
+      transform: translateY(-14.5em);
+    }
+  }
 }
 
 .u-container-for-grid {
@@ -89,4 +92,9 @@
   height: 4.5em;
   width: 4.5em;
   border-radius: 50%;
+}
+
+
+.container__grid_paragraph{
+  color:set-light($color-primary-dark);
 }

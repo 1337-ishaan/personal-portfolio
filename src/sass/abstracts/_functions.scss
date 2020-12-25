@@ -1,0 +1,10 @@
+@function set-color($class) {
+    @if ($class == #010101) {
+      @return #eee;
+    } @else {
+      @return #000;
+    }
+  }
+
+
+//   $main-color = set-color($parent-class);

@@ -14,7 +14,7 @@
   font-size: 10em;
   z-index: 1;
   position: relative;
-  color: rgba(190, 192, 198, 0.3); }
+  color: rgba(238, 238, 238, 0.5); }
   @media (max-width: 767px) {
     .drag__text {
       font-size: 1.5em;
@@ -26,7 +26,7 @@
   z-index: 1;
   text-align: right;
   padding: 0.5em;
-  color: rgba(190, 192, 198, 0.4); }
+  color: rgba(238, 238, 238, 0.5); }
   @media (max-width: 767px) {
     .drag__text_sprite {
       display: none; } }
@@ -107,9 +107,9 @@
     .u-form-input {
       width: 100%; } }
   .u-form-input::placeholder {
-    color: rgba(210, 211, 215, 0.7); }
+    color: rgba(238, 238, 238, 0.7); }
   .u-form-input:empty {
-    color: #d2d3d7;
+    color: #eeeeee;
     font-family: "Montserrat", sans-serif;
     background: rgba(100, 100, 100, 0.5); }
   .u-form-input:focus {
@@ -144,7 +144,8 @@
   line-height: 1.5em;
   padding: 1em;
   text-align: left;
-  padding: 2em 4em; }
+  padding: 2em 4em;
+  color: #eee !important; }
   @media (max-width: 767px) {
     .u-container-for-grid {
       grid-template-areas: "." ".";
@@ -159,6 +160,9 @@
   width: 4.5em;
   border-radius: 50%; }
 
+.container__grid_paragraph {
+  color: set-light(#010101); }
+
 .container__landing {
   display: flex;
   flex-direction: column;
@@ -169,14 +173,14 @@
   display: flex;
   padding: 1.5em 2em;
   position: sticky;
-  background: #0e0e0e;
   top: 0;
-  z-index: 1; }
+  color: #bec0c6;
+  z-index: 10; }
   @media (max-width: 767px) {
     .container__hamburger {
       flex-direction: column;
       text-align: center;
-      padding: .5em 0; } }
+      padding: 0.5em 0; } }
   .container__hamburger_content {
     height: 99vh;
     width: 100vw;
@@ -234,7 +238,9 @@
   padding: 1em;
   text-align: left;
   padding: 2em 4em;
-  margin-top: 2em; }
+  color: #eee !important;
+  margin-top: 2em;
+  color: #eee; }
   @media (max-width: 767px) {
     .container__services {
       grid-template-areas: "." ".";
@@ -253,6 +259,7 @@
   padding: 1em;
   text-align: left;
   padding: 2em 4em;
+  color: #eee !important;
   margin-top: 7.5em; }
   @media (max-width: 767px) {
     .container__welcome {
@@ -273,6 +280,7 @@
       overflow-x: scroll;
       justify-content: start; } }
   .container__work_projects_card {
+    z-index: 1;
     height: 15em;
     width: 15em;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -290,8 +298,10 @@
     .container__work_projects_card:hover {
       transform: scale(1.1);
       transition: all 0.5s; }
-    .container__work_projects_card_link {
-      font-size: 1.2em; }
+    .container__work_projects_card_head {
+      font-size: 1.2em;
+      font-weight: bold;
+      backface-visibility: hidden; }
     .container__work_projects_card_details {
       font-size: 1.1em; }
 
@@ -303,6 +313,11 @@
 @media (max-width: 767px) {
   #container {
     display: none; } }
+
+#container div {
+  width: 90vw !important;
+  margin: auto;
+  border: 1px solid rgba(100, 100, 100, 0.4); }
 
 .container__inspiration {
   display: flex;
@@ -371,7 +386,7 @@
   padding: 2em 4em;
   grid-template-areas: ".";
   justify-content: space-evenly;
-  background: rgba(100, 100, 100, 0.3);
+  background: rgba(238, 238, 238, 0.15);
   backdrop-filter: blur(4px);
   flex-direction: column; }
   @media (max-width: 767px) {
@@ -440,7 +455,7 @@
   height: 2.5em;
   width: 2.5em;
   font-size: 1.5em;
-  color: rgba(190, 192, 198, 0.5);
+  color: rgba(238, 238, 238, 0.6);
   border-radius: 50%;
   margin: auto;
   text-align: center;
@@ -471,6 +486,7 @@
     transition: all 1s; }
     .fa-github:hover {
       color: #eee;
+      color: #eeeeee;
       transition: all 1s; }
   .fa-facebook {
     transition: all 1s; }
@@ -483,16 +499,64 @@
 
 canvas {
   z-index: -1;
-  border: 1px solid #fff;
+  border: 1px solid rgba(238, 238, 238, 0.5);
   margin: auto;
   margin-top: 5em;
   width: 50vw !important;
   height: 50vh !important; }
 
+/* absolute position the input element on top of the accompanying svg element */
+label {
+  position: relative; }
+
+label input {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  opacity: 0; }
+
+label svg {
+  width: 350px;
+  height: auto;
+  display: block; }
+
+/* include transitions for the elements modified as the input is checked */
+label input + svg .light {
+  transition: opacity 0.75s cubic-bezier(0.68, 0.25, 0.265, 1); }
+
+label input + svg .translate,
+label input + svg .rotate,
+label input + svg .background,
+label input + svg .astronaut,
+label input + svg .surfer {
+  transition: transform 0.75s cubic-bezier(0.68, 0.25, 0.265, 1); }
+
+/* make the .light element fully transparent to have the .dark variant see through */
+label input:checked + svg .light {
+  opacity: 0; }
+
+/* translate the sun/moon toward the right (by default it is pushed back with a negative translation) */
+label input:checked + svg .translate {
+  transform: translateX(0px); }
+
+/* rotate the moon (by default it is rotated counter-clockwise) */
+label input:checked + svg .rotate {
+  transform: rotate(0deg); }
+
+/* translate the scale the backgrounds to 0
+  this is rather neat, so meant an extra comment
+  - the light background is positioned with two groups, one pushing it below the graphic, one back up; by removing the translation of this last group the background "returns" below the toggle
+  - the dark background is positioned above and with a smaller vertical scale; by removing the translation it is placed in full view and by increasing its scale it's as if the stars would tumble down with different rates
+  */
+label input:checked + svg .background {
+  transform: translate(0px) scale(1); }
+
 body {
   transition: all .5s;
   background: #010101;
-  color: #d2d3d7;
+  color: #eee;
   font-family: "Montserrat", sans-serif; }
 
 .welcome__services {
