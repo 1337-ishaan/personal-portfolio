@@ -6,7 +6,8 @@
   color: #d9a86c; }
   @media (max-width: 767px) {
     .name__text {
-      margin: auto; } }
+      margin: auto;
+      font-size: 1.2em; } }
 
 .drag__text {
   font-family: "Caveat", sans-serif;
@@ -222,6 +223,9 @@
 
 .hamburger-react {
   color: #FBFAF8; }
+  @media (max-width: 767px) {
+    .hamburger-react {
+      transform: scale(0.8) !important; } }
 
 .container__services {
   display: grid;
@@ -310,6 +314,9 @@
   width: 90vw !important;
   margin: auto;
   border: 1px solid rgba(100, 100, 100, 0.4); }
+
+#parallax {
+  margin-bottom: 2em; }
 
 .container__inspiration {
   display: flex;
@@ -515,12 +522,20 @@ body.dark-mode {
   font-size: 2em;
   cursor: pointer;
   margin: auto 0; }
+  @media (max-width: 767px) {
+    .fa_darkmode {
+      padding: 0 .5em;
+      transform: scale(0.8); } }
 
 .fa_lightmode {
   color: white;
   cursor: pointer;
   font-size: 2em;
   margin: auto 0; }
+  @media (max-width: 767px) {
+    .fa_lightmode {
+      padding: 0 .5em;
+      transform: scale(0.8); } }
 
 body {
   background: #fff;

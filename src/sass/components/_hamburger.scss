@@ -69,6 +69,7 @@
   color:$background-color-light;
     @media (max-width: 767px) {
     // margin: auto;
+      transform:scale(.8)!important;
     // text-align: center;
   }
 }

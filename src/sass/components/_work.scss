@@ -9,14 +9,13 @@
       justify-content: start;
     }
 
-
     width: 100%;
     &_card {
       @media (max-width: 767px) {
-        height:22em;
-        width:50vw;
+        height: 22em;
+        width: 50vw;
       }
-      z-index:1;
+      z-index: 1;
       height: 15em;
       width: 15em;
       border: 1px solid rgba(255, 255, 255, 0.3);
@@ -34,13 +33,12 @@
         transition: all 0.5s;
       }
       &_head {
-        font-size: 1.2em;        
+        font-size: 1.2em;
         font-weight: bold;
         backface-visibility: hidden;
       }
       &_details {
         font-size: 1.1em;
-      
       }
     }
   }
@@ -58,9 +56,11 @@
   }
 }
 
-
-#container div{
-  width:90vw!important;
-  margin:auto;
-  border:1px solid rgba(100,100,100,.4);
+#container div {
+  width: 90vw !important;
+  margin: auto;
+  border: 1px solid rgba(100, 100, 100, 0.4);
+}
+#parallax {
+  margin-bottom: 2em;
 }

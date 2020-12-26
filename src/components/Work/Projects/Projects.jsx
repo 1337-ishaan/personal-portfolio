@@ -16,8 +16,8 @@ const Projects = () => {
       details:
         "It is a basic idea of representing your long excel data sheets in graphical format, hence saving time for you.",
       link: "https://1337-ishaan.github.io/react-data-visualization/",
-      background: "169, 169, 169",
-      color: "#eee",
+      background: "220, 220, 220",
+      color: "#000",
       headColor: "#000",
     },
     {

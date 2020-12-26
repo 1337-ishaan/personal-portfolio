@@ -10,18 +10,24 @@ body.dark-mode {
   color: $background-color-light;
 }
 
-
-.fa_darkmode{
-  color:yellow;
-  font-size:2em;
+.fa_darkmode {
+  color: yellow;
+  font-size: 2em;
   cursor: pointer;
-  margin:auto 0;
+  margin: auto 0;
+  @media (max-width: 767px) {
+    padding: 0 .5em;
+    transform: scale(0.8);
+  }
 }
-.fa_lightmode{
-
-  color:white;
+.fa_lightmode {
+  color: white;
   cursor: pointer;
-  
-  font-size:2em;
-  margin:auto 0;
+
+  font-size: 2em;
+  margin: auto 0;
+  @media (max-width: 767px) {
+    padding: 0 .5em;
+    transform: scale(0.8);
+  }
 }
