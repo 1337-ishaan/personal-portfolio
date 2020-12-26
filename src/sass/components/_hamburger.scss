@@ -3,11 +3,11 @@
   padding: 1.5em 2em;
   position: sticky;
   top: 0;
-  // color: rgba($color-light-grey, 1);
+  justify-content: space-between;
   z-index: 10;
   @media (max-width: 767px) {
-    flex-direction: column;
-    text-align: center;
+    // flex-direction: column;
+    // text-align: center;
     padding: 0.5em 0;
   }
   &_content {
@@ -68,8 +68,8 @@
 .hamburger-react {
   color:$background-color-light;
     @media (max-width: 767px) {
-    margin: auto;
-    text-align: center;
+    // margin: auto;
+    // text-align: center;
   }
 }
 

@@ -1,12 +1,14 @@
 .name__text {
   font-weight: bold;
-  margin: auto 10em auto;
+  margin: auto;
+align-items: center;
   font-size: 1.5em;
   color: $color-heading-text;
   @media (max-width: 767px) {
-    text-align: center;
-    margin: 0;
-    padding: 0.5em;
+margin:auto;
+    // text-align: center;
+    // margin: 0;
+    // padding: 0.5em;
   }
 }
 

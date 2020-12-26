@@ -4,7 +4,7 @@ import { isOpenContext } from "../../utilities/Hamburger";
 const Name = () => {
   return (
     <isOpenContext.Consumer>
-      {(isOpen) => isOpen && <div className="name__text">Ishaan Parmar</div>}
+      {(isOpen) => isOpen && <div className=" name__text">Ishaan Parmar</div>}
     </isOpenContext.Consumer>
   );
 };

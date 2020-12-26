@@ -10,12 +10,13 @@ const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-   scrollColor( [30, 30, 30], ".container__hamburger");
-      if (isOpen) {
-      document.querySelector(".container__hamburger").style.background = "rgb(0,0,0)";
-     }
+    scrollColor([30, 30, 30], ".container__hamburger");
+    if (isOpen) {
+      document.querySelector(".container__hamburger").style.background =
+        "rgb(0,0,0)";
+    }
   }, [isOpen]);
-  
+
   return (
     <div className="container__hamburger">
       <Slant
@@ -24,6 +25,7 @@ const Hamburger = () => {
         toggled={isOpen}
         toggle={setIsOpen}
       />
+      
       {isOpen && (
         <>
           <HamburgerContents />
@@ -31,9 +33,8 @@ const Hamburger = () => {
       )}
       <isOpenContext.Provider value={!isOpen}>
         <Name />
-   <ThemeChanger />
+        <ThemeChanger />
       </isOpenContext.Provider>
-   
     </div>
   );
 };

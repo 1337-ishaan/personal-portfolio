@@ -87,6 +87,8 @@
 }
 
 .fa {
+
+  &_contact{
   height: 3em;
   width: 3em;
   font-size: 1.5em;
@@ -99,7 +101,7 @@
   display: flex;
   align-self: center;
   align-items: center;
-  justify-content: center;
+  justify-content: center;}
   &-instagram {
     transition: all 1s;
     &:hover {

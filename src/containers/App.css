@@ -1,13 +1,12 @@
 .name__text {
   font-weight: bold;
-  margin: auto 10em auto;
+  margin: auto;
+  align-items: center;
   font-size: 1.5em;
   color: #d9a86c; }
   @media (max-width: 767px) {
     .name__text {
-      text-align: center;
-      margin: 0;
-      padding: 0.5em; } }
+      margin: auto; } }
 
 .drag__text {
   font-family: "Caveat", sans-serif;
@@ -105,7 +104,10 @@
   @media (max-width: 767px) {
     .u-form-input {
       width: 100%; } }
+  .u-form-input::placeholder {
+    color: #010101; }
   .u-form-input:empty {
+    color: #010101;
     font-family: "Montserrat", sans-serif;
     background: rgba(100, 100, 100, 0.5); }
   .u-form-input:focus {
@@ -170,11 +172,10 @@
   padding: 1.5em 2em;
   position: sticky;
   top: 0;
+  justify-content: space-between;
   z-index: 10; }
   @media (max-width: 767px) {
     .container__hamburger {
-      flex-direction: column;
-      text-align: center;
       padding: 0.5em 0; } }
   .container__hamburger_content {
     height: 99vh;
@@ -221,10 +222,6 @@
 
 .hamburger-react {
   color: #FBFAF8; }
-  @media (max-width: 767px) {
-    .hamburger-react {
-      margin: auto;
-      text-align: center; } }
 
 .container__services {
   display: grid;
@@ -445,7 +442,7 @@
   display: flex;
   justify-content: space-evenly; }
 
-.fa {
+.fa_contact {
   height: 3em;
   width: 3em;
   font-size: 1.5em;
@@ -457,35 +454,40 @@
   align-self: center;
   align-items: center;
   justify-content: center; }
-  .fa-instagram {
+
+.fa-instagram {
+  transition: all 1s; }
+  .fa-instagram:hover {
+    transition: all 1s;
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    background-clip: text;
+    -webkit-background-clip: text; }
+
+.fa-phone {
+  transition: all 1s; }
+  .fa-phone:hover {
+    transition: all 1s;
+    color: blue; }
+
+.fa-envelope {
+  transition: all 1s; }
+  .fa-envelope:hover {
+    color: white;
     transition: all 1s; }
-    .fa-instagram:hover {
-      transition: all 1s;
-      color: transparent;
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-      background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-      background-clip: text;
-      -webkit-background-clip: text; }
-  .fa-phone {
+
+.fa-github {
+  transition: all 1s; }
+  .fa-github:hover {
+    color: #5b5b5c;
     transition: all 1s; }
-    .fa-phone:hover {
-      transition: all 1s;
-      color: blue; }
-  .fa-envelope {
-    transition: all 1s; }
-    .fa-envelope:hover {
-      color: white;
-      transition: all 1s; }
-  .fa-github {
-    transition: all 1s; }
-    .fa-github:hover {
-      color: #5b5b5c;
-      transition: all 1s; }
-  .fa-facebook {
-    transition: all 1s; }
-    .fa-facebook:hover {
-      transition: all 1s;
-      color: blue; }
+
+.fa-facebook {
+  transition: all 1s; }
+  .fa-facebook:hover {
+    transition: all 1s;
+    color: blue; }
 
 .dg {
   display: none !important; }
@@ -507,6 +509,18 @@ body.dark-mode {
   font-family: "Montserrat", sans-serif;
   background-color: #010101;
   color: #FBFAF8; }
+
+.fa_darkmode {
+  color: yellow;
+  font-size: 2em;
+  cursor: pointer;
+  margin: auto 0; }
+
+.fa_lightmode {
+  color: white;
+  cursor: pointer;
+  font-size: 2em;
+  margin: auto 0; }
 
 body {
   background: #fff;

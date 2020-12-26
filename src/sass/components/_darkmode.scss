@@ -9,3 +9,19 @@ body.dark-mode {
   background-color: $background-color-dark;
   color: $background-color-light;
 }
+
+
+.fa_darkmode{
+  color:yellow;
+  font-size:2em;
+  cursor: pointer;
+  margin:auto 0;
+}
+.fa_lightmode{
+
+  color:white;
+  cursor: pointer;
+  
+  font-size:2em;
+  margin:auto 0;
+}
