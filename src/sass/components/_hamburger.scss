@@ -3,7 +3,7 @@
   padding: 1.5em 2em;
   position: sticky;
   top: 0;
-  color: rgba($color-light-grey, 1);
+  // color: rgba($color-light-grey, 1);
   z-index: 10;
   @media (max-width: 767px) {
     flex-direction: column;
@@ -21,14 +21,13 @@
     }
     &_main {
       width: 23%;
-
       padding: 5em;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       grid-template-areas: ".";
-      background: $color-primary-dark;
-      color: $color-light-grey;
+      color: $background-color-light;
+
       transition: all $default-transition-time;
       @media (max-width: 767px) {
         text-align: center;
@@ -36,17 +35,21 @@
         height: 23%;
         padding: 1em;
       }
+
       &_heading {
         font-size: 2em;
         line-height: $default-line-height;
+
         @media (max-width: 767px) {
           margin: auto;
         }
       }
       &_paragraph {
-        color: $color-primary-dark;
+        color: $background-color-dark;
+
         &:hover {
-          color: $color-primary-light;
+          opacity: 1;
+          color: $background-color-dark;
         }
         @media (max-width: 767px) {
           display: none;
@@ -56,15 +59,17 @@
       &:hover {
         transition: all $default-transition-time;
         background: $color-primary-light;
-        color: $color-primary-dark;
+        color: $background-color-dark;
       }
     }
   }
 }
 
-@media (max-width: 767px) {
-  .hamburger-react {
+.hamburger-react {
+  color:$background-color-light;
+    @media (max-width: 767px) {
     margin: auto;
     text-align: center;
   }
 }
+

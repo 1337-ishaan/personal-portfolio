@@ -14,7 +14,7 @@
   padding: 2em;
   letter-spacing: 0.5em;
   background-image: $background-rainbow-gradient;
-  color: $color-primary-dark;
+  color: set-color($color-primary-dark);
   font-weight: 500;
   text-transform: uppercase;
   font-family: "Caveat", sans-serif;
@@ -34,10 +34,10 @@
     width: 100%;
   }
   &::placeholder {
-    color: rgba(set-color($color-primary-dark), 0.7);
+    // color: rgba(set-color($color-primary-dark), 0.7);
   }
   &:empty {
-    color: rgba(set-color($color-primary-dark), 1);
+    // color: rgba(set-color($color-primary-dark), 1);
 
     font-family: "Montserrat", sans-serif;
     background: rgba(100, 100, 100, 0.5);
@@ -94,7 +94,8 @@
   border-radius: 50%;
 }
 
-
-.container__grid_paragraph{
-  color:set-light($color-primary-dark);
+.u-horizontal-divider {
+  border: 1px solid rgba($color-dark-grey, 0.4);
+  // height:10px;
+  width: 60vw;
 }

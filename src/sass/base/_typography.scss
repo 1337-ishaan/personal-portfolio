@@ -15,7 +15,8 @@
   font-size: 10em;
   z-index: 1;
   position: relative;
-  color: rgba(set-color($color-primary-dark), 0.5);
+  opacity: 0.5;
+  // color: rgba(set-color($color-primary-dark), 0.5);
   @media (max-width: 767px) {
     font-size: 1.5em;
     margin: 02em auto 0;
@@ -25,14 +26,15 @@
   @media (max-width: 767px) {
     display: none;
   }
+  opacity: 0.5;
+
   font-family: "Caveat", sans-serif;
   font-size: 5em;
   z-index: 1;
   text-align: right;
   padding: 0.5em;
-  // default  
-  color: rgba(set-color($color-primary-dark), 0.5);
-
+  // default
+  // color: rgba(set-color($color-primary-dark), 0.5);
 }
 
 .profession__container {
@@ -69,7 +71,6 @@
   font-family: "Caveat", sans-serif;
   font-size: 1.3em;
   margin: auto;
-  color: #fff;
   text-decoration: underline;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid grey;
 }

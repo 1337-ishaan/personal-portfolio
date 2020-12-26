@@ -24,14 +24,7 @@ export const scrollColor = (rgbColor, scrollContainer) => {
 
 const App = () => {
   useEffect(() => {
-    let bodyColor = document.querySelector("body");
-
-    scrollColor(
-      bodyColor.style.background === "#010101"
-        ? [130, 130, 130]
-        : [255, 255, 255],
-      ".welcome__services"
-    );
+    //  scrollColor([100, 100, 100], ".welcome__services")
   }, []);
 
   return (
@@ -39,6 +32,7 @@ const App = () => {
       <SnackbarProvider>
         <Hamburger />
         <Landing />
+        <div className="u-center-content u-horizontal-divider"></div>
         <div className="welcome__services">
           <Welcome />
           <Services />

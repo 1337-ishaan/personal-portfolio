@@ -39,7 +39,7 @@
       padding: 3em 5em;
       width: 50em;
       grid-template-areas: ".";
-      background: rgba($color-primary-dark, 0.8);
+      // background: rgba(set-color($color-primary-dark), 0.2);
       @media (max-width: 767px) {
         padding: 0.5em;
         text-align: center;

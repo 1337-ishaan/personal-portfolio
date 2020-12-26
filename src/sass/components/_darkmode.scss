@@ -1,0 +1,11 @@
+body {
+  background-color: $background-color-light;
+  color: $background-color-dark;
+  font-family: "Montserrat", sans-serif;
+}
+
+body.dark-mode {
+  font-family: "Montserrat", sans-serif;
+  background-color: $background-color-dark;
+  color: $background-color-light;
+}

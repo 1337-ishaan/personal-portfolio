@@ -8,19 +8,14 @@ export const isOpenContext = React.createContext(false);
 
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
-    scrollColor([30, 30, 30], ".container__hamburger");
-    if (isOpen) {
+   scrollColor( [30, 30, 30], ".container__hamburger");
+      if (isOpen) {
       document.querySelector(".container__hamburger").style.background = "rgb(0,0,0)";
      }
   }, [isOpen]);
-  function handleInput() {
-    document.querySelector('body').style.background = checked ? '#151d29' : '#d6e7f7';
-  }
   
-
   return (
     <div className="container__hamburger">
       <Slant
@@ -36,9 +31,9 @@ const Hamburger = () => {
       )}
       <isOpenContext.Provider value={!isOpen}>
         <Name />
+   <ThemeChanger />
       </isOpenContext.Provider>
    
-   {/* <ThemeChanger handleInput={handleInput} /> */}
     </div>
   );
 };

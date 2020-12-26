@@ -1,5 +1,5 @@
-// $color-primary-dark: #fff;
-$color-primary-dark: #010101;
+$color-primary-dark: #fff;
+// $color-primary-dark: #010101;
 $color-primary-light: #d2d3d7;
 $color-light-grey: #bec0c6;
 $color-dark-grey: #5b5b5c;
@@ -13,6 +13,11 @@ $background-rainbow-gradient: linear-gradient(
   rgba(234, 238, 240, 1) 81.9%,
   rgba(250, 245, 171, 1) 99.2%
 );
+$background-color-dark: #010101;
+$background-color-light: #FBFAF8;
+$complimentary-color-dark: #393B43;
+$complimentary-color-light: #FEFFFF;
+
 // transition timings
 $default-transition-time: 0.5s;
 
@@ -22,5 +27,3 @@ $margin-for-hamburger: 2em;
 $default-line-height: 1.5em;
 
 $border-for-contact: 5px;
-
-
