@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {isOpenContext} from '../utilities/Hamburger';
 
-const HamburgerContents = () => {
+const HamburgerContents = (props) => {
   return (
     <div className="u-center-content container__hamburger_content">
       <a className="container__hamburger_content_main" href="#">
@@ -13,13 +14,13 @@ const HamburgerContents = () => {
         </div>
       </a>
       <div className="u-vertical-divider"></div>
-      <a className="container__hamburger_content_main" href="#">
-        <div className="container__hamburger_content_main_heading">Works</div>
+      <a  className="container__hamburger_content_main" href="#works">
+        <div  className="container__hamburger_content_main_heading">Works</div>
         <div className="container__hamburger_content_main_paragraph">
           What have I been doing, all this time?
         </div>
       </a>
-      <a className="container__hamburger_content_main" href="#">
+      <a className="container__hamburger_content_main" href="#inspiration">
         <div className="container__hamburger_content_main_heading">
           Inspiration
         </div>
@@ -28,7 +29,7 @@ const HamburgerContents = () => {
           me the most.
         </div>
       </a>
-      <a className="container__hamburger_content_main" href="#">
+      <a className="container__hamburger_content_main" href="#aboutandcontact">
         <div className="container__hamburger_content_main_heading">
           About & Contact
         </div>
@@ -37,7 +38,7 @@ const HamburgerContents = () => {
         </div>
       </a>
     </div>
-  );
+ );
 };
-
+    
 export default HamburgerContents;

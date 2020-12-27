@@ -28,10 +28,10 @@ const Hamburger = () => {
       
       {isOpen && (
         <>
-          <HamburgerContents />
+          <HamburgerContents isOpen={isOpen} setIsOpen={setIsOpen} />
         </>
       )}
-      <isOpenContext.Provider value={!isOpen}>
+          <isOpenContext.Provider value={!isOpen}>
         <Name />
         <ThemeChanger />
       </isOpenContext.Provider>

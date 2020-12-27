@@ -7,12 +7,12 @@ import { GUI } from "three/examples/jsm/libs/dat.gui.module.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { LightProbeGenerator } from "three/examples/jsm/lights/LightProbeGenerator.js";
 import { ParallaxBarrierEffect } from "three/examples/jsm/effects/ParallaxBarrierEffect.js";
-import two from "../../assets/pisa/nx.png";
-import four from "../../assets/pisa/ny.png";
-import six from "../../assets/pisa/nz.png";
-import one from "../../assets/pisa/px.png";
-import three from "../../assets/pisa/py.png";
-import five from "../../assets/pisa/pz.png";
+import two from "../../../assets/pisa/nx.png";
+import four from "../../../assets/pisa/ny.png";
+import six from "../../../assets/pisa/nz.png";
+import one from "../../../assets/pisa/px.png";
+import three from "../../../assets/pisa/py.png";
+import five from "../../../assets/pisa/pz.png";
 
 const Parallax = () => {
   useEffect(() => {

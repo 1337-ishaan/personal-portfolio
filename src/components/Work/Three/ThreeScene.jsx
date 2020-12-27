@@ -3,17 +3,9 @@ import ReactThreeFbxViewer from "react-three-fbx-viewer";
 
 import * as THREE from "three";
 
-import Stats from "three/examples/jsm/libs/stats.module.js";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
-import modelObj from "../../assets/scene.obj";
-import Ishaan from "../../assets/images/IshaanR.jpg";
-
 import { AsciiEffect } from "three/examples/jsm/effects/AsciiEffect.js";
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls.js";
-import one from "../../assets/images/Ishaan1.png";
-
+import sprite from "../../../assets/images/sprite.png";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min.js";
 // import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls.js';
 import {
@@ -37,8 +29,6 @@ const ThreeScene = () => {
   };
 
   useEffect(() => {
-    console.log(modelObj);
-
     let camera, scene, renderer;
     let controls;
 
@@ -81,8 +71,7 @@ const ThreeScene = () => {
         },
         false
       );
-      image.src =
-        "https://github.com/mrdoob/three.js/blob/master/examples/textures/sprite.png?raw=true";
+      image.src = sprite;
 
       // Plane
 
@@ -209,9 +198,11 @@ const ThreeScene = () => {
   }, []);
   return (
     <>
-    <div className="drag__text_sprite">^ Drag to rotate and Scroll to resize</div>
-    <div id="container"></div>
-  </>
+      <div className="drag__text_sprite">
+        ^ Drag to rotate and Scroll to resize
+      </div>
+      <div id="container"></div>
+    </>
   );
 };
 

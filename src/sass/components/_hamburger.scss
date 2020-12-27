@@ -1,6 +1,6 @@
 .container__hamburger {
   display: flex;
-  padding: 1.5em 2em;
+  padding: 1em 2em;
   position: sticky;
   top: 0;
   justify-content: space-between;
@@ -67,10 +67,29 @@
 
 .hamburger-react {
   color:$background-color-light;
+  // margin:auto 0;
     @media (max-width: 767px) {
     // margin: auto;
       transform:scale(.8)!important;
+      
     // text-align: center;
   }
 }
 
+
+.container__name{
+display: flex;
+  &_logo{
+    height:4em;
+    width:5em;
+  
+    @media(max-width: 767px){
+
+      // height:3em;
+      // width:4em;
+    }
+    // padding:0;
+    // margin:0;
+
+  }
+}
