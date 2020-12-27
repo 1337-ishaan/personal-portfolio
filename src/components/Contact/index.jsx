@@ -4,7 +4,7 @@ import About from "../About/index";
 const index = () => {
   return (
     <div className="container__contact">
-      <div className="u-subject-text">About & Contact</div>
+      <div id="aboutandcontact" className="u-subject-text">About & Contact</div>
       <About />
       <Form />
     </div>

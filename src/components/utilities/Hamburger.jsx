@@ -17,6 +17,10 @@ const Hamburger = () => {
     }
   }, [isOpen]);
 
+
+  const closeHamburger = () => {
+    setIsOpen(false)
+  }
   return (
     <div className="container__hamburger">
       <Slant
@@ -28,7 +32,7 @@ const Hamburger = () => {
       
       {isOpen && (
         <>
-          <HamburgerContents isOpen={isOpen} setIsOpen={setIsOpen} />
+          <HamburgerContents closeHamburger={closeHamburger} />
         </>
       )}
           <isOpenContext.Provider value={!isOpen}>

@@ -8,13 +8,9 @@
       overflow-x: scroll;
       justify-content: start;
     }
+    width: 100vw;
 
-    width: 100%;
     &_card {
-      @media (max-width: 767px) {
-        height: 22em;
-        width: 50vw;
-      }
       z-index: 1;
       height: 15em;
       width: 15em;
@@ -28,9 +24,18 @@
       // &:not(:last-child){
       margin-left: 2em;
       // }
+      @media (max-width: 767px) {
+        height: 22em;
+        width: 40vw!important;
+      }
       &:hover {
         transform: scale(1.1);
         transition: all 0.5s;
+        @media (max-width: 767px) {
+          transform: scale(1);
+
+        }
+  
       }
       &_head {
         font-size: 1.2em;

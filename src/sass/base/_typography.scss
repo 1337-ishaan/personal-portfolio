@@ -46,11 +46,13 @@
   font-size: clamp(16px, 5vw, 6em);
   text-align: left;
   line-height: 2em;
+
   @media (max-width: 767px) {
     font-size: 3em;
     margin: 1em 0.5em;
     text-align: center;
   }
+
 }
 
 .container__dynamicText {

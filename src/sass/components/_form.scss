@@ -4,6 +4,7 @@
     margin: 5em auto;
     display: grid;
     // flex-direction:column;
+    border:1px solid rgba($color-light-grey, .2);
     padding: 2em 4em;
     grid-template-areas: ".";
     justify-content: space-evenly;
@@ -28,15 +29,19 @@
       margin: auto;
       position: relative;
       border: none;
+      outline:0;
       cursor: pointer;
       &:hover {
         background: linear-gradient(145deg, #1b1b1b, #202020);
         box-shadow: -5px -5px 10px #111111, 5px 5px 10px #111111;
         color: $color-heading-text;
-        transform: scale(1.2);
+        transform: scale(1.1);
         transition: all 0.5s;
       }
       &:active {
+        outline:none;
+        border:none;
+        text-decoration:none;
         transition: all 0.2s;
         transform: translateY(-1px);
         box-shadow: -2.5px -2.5px 10px #111111, 2.5px 2.5px 10px #2c2c2c;

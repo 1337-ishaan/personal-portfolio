@@ -4,7 +4,7 @@ import Education from "./Education/Education";
 
 const index = () => {
   return (
-    <div id="aboutandcontact" className="container__about">
+    <div className="container__about">
         
       <Education />
       <Background />

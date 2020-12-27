@@ -6,7 +6,7 @@ import Parallax from "./Three/Parallax";
 
 const index = () => {
   return (
-    <div id="#works" className="container__work">
+    <div id="works" className="container__work">
       <div className="u-subject-text">Works</div>
                 <div className="container__work_animations">
                     
