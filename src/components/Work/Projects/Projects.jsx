@@ -28,15 +28,15 @@ const Projects = () => {
       background: "35, 43, 43",
       headColor: "orange",
     },
-    {
-      name: "Landing Page for Travel",
-      details:
-        "Utility landing page for developers wishing to make a travel website.",
-      link: "https://1337-ishaan.github.io/travel-landing-page/",
-      background: "0, 128, 0",
-      color: "#eee",
-      headColor: "#fff",
-    },
+    // {
+    //   name: "Landing Page for Travel",
+    //   details:
+    //     "Utility landing page for developers wishing to make a travel website.",
+    //   link: "https://1337-ishaan.github.io/travel-landing-page/",
+    //   background: "0, 128, 0",
+    //   color: "#eee",
+    //   headColor: "#fff",
+    // },
     {
       name: "RoboFriends",
       details:
