@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6e28f1f7.chunk.css",
+    "main.js": "/static/js/main.e2bce58e.chunk.js",
+    "main.js.map": "/static/js/main.e2bce58e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4e2a208e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4e2a208e.js.map",
+    "static/js/2.d87b17fe.chunk.js": "/static/js/2.d87b17fe.chunk.js",
+    "static/js/2.d87b17fe.chunk.js.map": "/static/js/2.d87b17fe.chunk.js.map",
+    "static/js/3.344db774.chunk.js": "/static/js/3.344db774.chunk.js",
+    "static/js/3.344db774.chunk.js.map": "/static/js/3.344db774.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6e28f1f7.chunk.css.map": "/static/css/main.6e28f1f7.chunk.css.map",
+    "static/js/2.d87b17fe.chunk.js.LICENSE.txt": "/static/js/2.d87b17fe.chunk.js.LICENSE.txt",
+    "static/media/Gilfoyle.4c7d7066.png": "/static/media/Gilfoyle.4c7d7066.png",
+    "static/media/Musk.d276b03a.jpg": "/static/media/Musk.d276b03a.jpg",
+    "static/media/nx.f11c406a.png": "/static/media/nx.f11c406a.png",
+    "static/media/ny.2ebc515c.png": "/static/media/ny.2ebc515c.png",
+    "static/media/nz.1791e49f.png": "/static/media/nz.1791e49f.png",
+    "static/media/px.2790714e.png": "/static/media/px.2790714e.png",
+    "static/media/py.4feb318e.png": "/static/media/py.4feb318e.png",
+    "static/media/pz.655cf304.png": "/static/media/pz.655cf304.png",
+    "static/media/sprite.3a44e52c.png": "/static/media/sprite.3a44e52c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4e2a208e.js",
+    "static/js/2.d87b17fe.chunk.js",
+    "static/css/main.6e28f1f7.chunk.css",
+    "static/js/main.e2bce58e.chunk.js"
+  ]
+}

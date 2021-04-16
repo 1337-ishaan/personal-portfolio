@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Projects = () => {
-  const [projects, setProjects] = useState([
+  const projects = [
     {
       name: "World Music Hub",
       details:
@@ -12,6 +12,15 @@ const Projects = () => {
       headColor: "#eee",
     },
     {
+      name: "E-ventify",
+      details:
+        "The perfect showcase for the services provided by an Event Mangement Company",
+      link: "http://eventify.in/",
+      background: "44, 63, 110",
+      color: "#fff",
+      headColor: "#d9a86c",
+    },
+    {
       name: "Data Visualization",
       details:
         "It is a basic idea of representing your long excel data sheets in graphical format, hence saving time for you.",
@@ -20,6 +29,7 @@ const Projects = () => {
       color: "#000",
       headColor: "#000",
     },
+
     {
       name: "Calculator",
       details: "Does not need to be explained :'/ ",
@@ -46,7 +56,7 @@ const Projects = () => {
       color: "#fff",
       headColor: "yellow",
     },
-  ]);
+  ];
   return (
     <div className="container__work_projects">
       {projects.map((project, i) => (
