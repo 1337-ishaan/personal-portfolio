@@ -12,22 +12,28 @@ body.dark-mode {
 
 .fa_darkmode {
   color: yellow;
-  font-size: 2em;
+  // font-size: 2em;
   cursor: pointer;
   margin: auto 0;
   @media (max-width: 767px) {
-    padding: 0 .5em;
+    padding: 0 0.5em;
     transform: scale(0.8);
   }
 }
+
 .fa_lightmode {
   color: white;
   cursor: pointer;
 
-  font-size: 2em;
+  // font-size: 2em;
   margin: auto 0;
   @media (max-width: 767px) {
-    padding: 0 .5em;
+    padding: 0 0.5em;
     transform: scale(0.8);
   }
+}
+
+
+.darkmode_icon{
+  height:4em;
 }

@@ -32,17 +32,19 @@ const DarkModeToggle = () => {
           isOpen && (
             <>
               {darkMode ? (
-                <i
+                <img
                   onClick={handleModeChange}
-                  class="fa fa_darkmode fa-sun-o"
+                  className="fa fa_darkmode darkmode_icon fa-sun-o"
                   aria-hidden="true"
-                ></i>
+                  src="https://www.svgrepo.com/show/295127/sun-summertime.svg"
+                />
               ) : (
-                <i
+                <img
                   onClick={handleModeChange}
-                  class="fa  fa_lightmode fa-moon-o"
+                  className="fa fa_lightmode darkmode_icon fa-moon-o"
                   aria-hidden="true"
-                ></i>
+                  src="https://www.svgrepo.com/show/7570/man-on-the-moon.svg"
+                />
               )}
             </>
           )

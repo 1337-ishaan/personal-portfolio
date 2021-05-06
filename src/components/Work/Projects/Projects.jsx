@@ -12,6 +12,15 @@ const Projects = () => {
       headColor: "#eee",
     },
     {
+      name: "IITian's Science Point",
+      details:
+        "A client website made for a well reputed coaching classes",
+      link: "http://isciencepoint.com/",
+      background: "0,0,50",
+      color: "#eee",
+      headColor: "#fff",
+    },
+    {
       name: "E-ventify",
       details:
         "The perfect showcase for the services provided by an Event Mangement Company",
@@ -47,15 +56,7 @@ const Projects = () => {
     //   color: "#eee",
     //   headColor: "#fff",
     // },
-    {
-      name: "RoboFriends",
-      details:
-        "Fetches Robots Images and Name data using API, and searches over it, my first project -_-",
-      link: "https://1337-ishaan.github.io/RoboFriends/",
-      background: "35, 43, 43",
-      color: "#fff",
-      headColor: "yellow",
-    },
+
   ];
   return (
     <div className="container__work_projects">
